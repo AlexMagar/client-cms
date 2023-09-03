@@ -82,6 +82,10 @@ export const Header = () => {
     const handleCloseUserMenu = () => {
       setAnchorElUser(null);
     };
+
+    const handleOpenUserCart = () =>{
+        console.log("Cart")
+    }
     return (
         <AppBar position="static">
           <Container maxWidth="xl">
@@ -174,7 +178,7 @@ export const Header = () => {
     
               <Box sx={{ flexGrow: 1, display:{xs: 'none', md:'flex', gap:40, flexDirection:'row-reverse', padding:5 }}}>
               <Tooltip title="Open settings">
-                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                  <IconButton onClick={handleOpenUserCart} sx={{ p: 0 }}>
                     <Badge badgeContent={4} color='error'>
                         <AddShoppingCartIcon />
                     </Badge>
