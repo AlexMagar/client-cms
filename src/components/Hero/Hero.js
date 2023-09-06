@@ -2,40 +2,36 @@ import React, { Fragment } from 'react'
 import Carousel from "react-material-ui-carousel";
 import { CarouselItems } from './CarouselItems';
 
-export const Hero = (props) => {
+export const Hero = (item) => {
 
-  const items = [
+  const slider = [
     {
-      name: "Random Name #1",
-      description: "Probably the most random thing you have ever seen!"
+      "id": 1,
+      "image": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bGFuZHNjYXBlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+      "title": "--- Smart Phones 1 ---"
     },
     {
-      name: "Random Name #2",
-      description: "Hello Carousel"
+      "id": 2,
+      "image": "https://images.unsplash.com/photo-1532274402911-5a369e4c4bb5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGxhbmRzY2FwZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      "title": "--- Smart Phones 2 ---"
     },
     {
-      name: "Random Name #3",
-      description: "Hello Carousel"
+      "id": 3,
+      "image": "https://images.unsplash.com/photo-1532274402911-5a369e4c4bb5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGxhbmRzY2FwZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      "title": "--- Smart Phones 3 ---"
     },
     {
-      name: "Random Name #4",
-      description: "Hello Carousel"
-    },
-    {
-      name: "Random Name #5",
-      description: "Hello Carousel"
+      "id": 4,
+      "image": "https://images.unsplash.com/photo-1532274402911-5a369e4c4bb5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGxhbmRzY2FwZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      "title": "--- Smart Phones 4 ---"
     },
   ]
 
   return (
     <div className='mt-5 mb-5 p-9'>
-      <Carousel 
-        NextIcon={<img src='https://mdbootstrap.com/img/Photos/Slides/img%20(31).webp'/>}
-        PrevIcon={<img src='https://wowslider.com/sliders/demo-93/data1/images/sunset.jpg'/>}
-
-      >
+      <Carousel>
         {
-          items.map((item, i) => <CarouselItems key={i} item={item} />)
+          slider.map( item => <CarouselItems key={item.id} item={item} />)
         }
       </Carousel>
     </div>
