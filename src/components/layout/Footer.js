@@ -16,6 +16,7 @@ export const Footer = () =>{
             ? theme.palette.grey[200]
             : theme.palette.grey[800],
         p: 6,
+        marginTop: 10,
       }}
     >
       <Container maxWidth="lg">
