@@ -28,10 +28,10 @@ export const Hero = (item) => {
   ]
 
   return (
-    <div className='mt-5 mb-5 p-9'>
+    <div className='carou'>
       <Carousel>
         {
-          slider.map( item => <CarouselItems key={item.id} item={item} />)
+          slider.map( (item) => <CarouselItems key={item.id} item={item} />)
         }
       </Carousel>
     </div>
