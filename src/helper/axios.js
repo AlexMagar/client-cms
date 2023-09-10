@@ -6,10 +6,12 @@ const adminAPI = rootAPI + '/admin'
 const axiosProcessor = async ({method, url, obj, isPrivate}) =>{
 
     try {
+
+        console.log("axios", obj)
         const {data} = await axios({
             method,
             url,
-            data: obj,
+            data: obj
 
         })
     } catch (error) {
@@ -25,7 +27,9 @@ export const getAdminInfo = () =>{
     const obj = {
         method: 'get',
         url: adminAPI,
+        isPrivate: true
     }
+    console.log("getAdminInfo:", obj)
     return axiosProcessor(obj)
 }
 
