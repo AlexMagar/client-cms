@@ -1,11 +1,10 @@
 import { getAdminInfo } from "../../helper/axios"
-import { toast } from "react-toastify";
 
 
 export const getAdminAction = async () =>{
-    const {status, message} = await getAdminInfo()
+    const result = await getAdminInfo()
 
-    console.log(status)
+    console.log("Hello Action: ",result)
 
     
 }
