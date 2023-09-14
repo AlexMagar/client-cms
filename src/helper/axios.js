@@ -33,3 +33,16 @@ export const getAdminInfo = () =>{
     return axiosProcessor(obj)
 }
 
+
+
+// ============ product info ============
+
+export const getProduct = () =>{
+    const obj = {
+        method: 'get',
+        url: adminAPI,
+        isPrivate: true
+    }
+    return axiosProcessor(obj)
+}
+
