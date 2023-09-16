@@ -1,14 +1,21 @@
 import { Button } from '@mui/material'
-import React from 'react'
-import { getAdminAction } from './getCatAction'
+import React, { useEffect } from 'react'
+import { useDispatch } from "react-redux";
+import { getAdmin } from '../../pages/signIn-signUp/adminAction'
 
 export const GetCat = () => {
 
-    const handleOnClick = (e) => {
-        e.preventDefault()
-        const result = getAdminAction()
-        result && console.log("Admin got", result)
-    }
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getAdmin())
+  }, [dispatch])
+
+  const handleOnClick = (e) => {
+      e.preventDefault()
+      const result = dispatch(getAdmin())
+      result && console.log("Admin got", result)
+  }
   return (
     <div>
         <Button variant='contained' onClick={handleOnClick}>Click me</Button>
