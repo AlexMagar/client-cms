@@ -1,16 +1,17 @@
 import { getAdminInfo } from "../../helper/axios"
 import { setAdmin } from "../admin-user/AdminSlice"
+import { toast } from "react-toastify";
 
 
 //get admin 
 export const getAdmin = () => async (dispatch) => {
 
-    //call the api to get the user
-    const {status, user} = await getAdminInfo()
+    const pendingResponse = await getAdminInfo()
 
-    console.log("admin Action: ", user)
+    console.log(pendingResponse)
+    
+    const { status, message, user} = await pendingResponse;
 
-    //mount the state with the user data
     if(status === 'success'){
         dispatch(setAdmin(user))
     }
