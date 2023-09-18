@@ -4,17 +4,15 @@ import axios from 'axios'
 const rootAPI = process.env.REACT_APP_ROOTAPI
 const adminAPI = rootAPI + '/admin'
 
-const axiosProcessor = async ({method, url, obj, isPrivate}) =>{
+const axiosProcessor = async ({method, url, obj}) =>{
 
-    // const headers = {
-    //     Authorization: isPrivate ? token : null
-    // }
     try {
         const {data} = await axios({
             method,
             url,
-            data: obj,
+            data: obj
         })
+        return data
     } catch (error) {
         return {
             status: 'error',
@@ -27,11 +25,12 @@ const axiosProcessor = async ({method, url, obj, isPrivate}) =>{
 export const getAdminInfo = () =>{
     const obj = {
         method: 'get',
-        url: adminAPI,
-        isPrivate: true
+        url: adminAPI
     }
     return axiosProcessor(obj)
 }
+
+console.log(axiosProcessor())
 
 // ============ product info ============
 // export const getProduct = () =>{
