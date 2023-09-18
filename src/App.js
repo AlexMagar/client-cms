@@ -5,6 +5,7 @@ import { Header } from "./components/layout/Header";
 import { Footer } from './components/layout/Footer';
 import { Route, Routes } from "react-router-dom";
 import { Home } from './pages/home/Home'
+import 'react-toastify/dist/ReactToastify.css';
 import { SignIn } from './pages/signIn-signUp/SignIn';
 
 function App() {
