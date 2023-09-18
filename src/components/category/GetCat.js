@@ -18,7 +18,7 @@ export const GetCat = () => {
   }
   return (
     <div>
-        <Button variant='contained' onClick={handleOnClick}>Click me</Button>
+        <Button variant='contained' onClick={handleOnClick} type='submit'>Click me</Button>
     </div>
   )
 }
