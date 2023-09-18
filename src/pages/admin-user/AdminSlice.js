@@ -10,7 +10,7 @@ const adminSlice = createSlice({
     initialState,
     reducers:{
         setAdmin: (state, {payload}) => {
-            state.admin = payload
+            state.user = payload
         }
     }
 })
