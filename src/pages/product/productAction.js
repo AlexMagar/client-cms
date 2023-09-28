@@ -1,14 +1,17 @@
-import { getProduct } from "../../helper/axios"
-import { setProducts } from "./productSlice"
-
+import { getProducts } from "../../helper/axios"
+import { setProducts } from "./productSlice";
 
 export const getProductAction = () => async (dispatch) =>{
-    const { status, products} = await getProduct()
+    
+    const pendingResponse = await getProducts()
 
-    console.log("If success: ", status, products)
+    console.log("this is from the product Action", pendingResponse)
 
-    if(status === 'success'){
-        //mount data in the store
+    const { status, message, products} = await pendingResponse
+
+    if(status === "success"){
         dispatch(setProducts(products))
     }
+
+
 }
