@@ -30,15 +30,13 @@ export const getAdminInfo = () =>{
     return axiosProcessor(obj)
 }
 
-console.log(axiosProcessor())
-
 // ============ product info ============
-// export const getProduct = () =>{
-//     const obj = {
-//         method: 'get',
-//         url: adminAPI,
-//         isPrivate: true
-//     }
-//     return axiosProcessor(obj)
-// }
+export const getProducts = () =>{
+    const obj = {
+        method: 'get',
+        url: rootAPI + "/product",
+        isPrivate: true
+    }
+    return axiosProcessor(obj)
+}
 
