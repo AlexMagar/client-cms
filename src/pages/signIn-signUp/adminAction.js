@@ -1,6 +1,5 @@
 import { getAdminInfo } from "../../helper/axios"
 import { setAdmin } from "../admin-user/AdminSlice"
-import { toast } from "react-toastify";
 
 
 //get admin 
