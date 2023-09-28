@@ -1,4 +1,4 @@
-import { Button, Paper } from '@mui/material'
+import { Paper } from '@mui/material'
 import React from 'react'
 
 export const CarouselItems = (item) => {
