@@ -5,7 +5,10 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ShareIcon from "@mui/icons-material/Share";
+import { useSelector } from 'react-redux';
+import { Key } from '@mui/icons-material';
 
+const imgURL = "https://images.unsplash.com/photo-1532274402911-5a369e4c4bb5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGxhbmRzY2FwZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60"
 
 const ExpandMore = styled((props) => {
   const { expand, ...other} = props
@@ -22,9 +25,12 @@ const ExpandMore = styled((props) => {
 export const CardView = () => {
 
   const [ expanded, setExpanded] = useState(false)
+  const {products} = useSelector((state) => state.productInfo)
+
 
   const handleOnExpandClick = () =>{
     setExpanded(!expanded)
+    console.log(products)
   }
 
   return (
@@ -42,7 +48,7 @@ export const CardView = () => {
         <CardMedia 
           component='img'
           height='194'
-          image='https://images.unsplash.com/photo-1532274402911-5a369e4c4bb5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGxhbmRzY2FwZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60'
+          image={products}
           alt='Image'
         />
 
