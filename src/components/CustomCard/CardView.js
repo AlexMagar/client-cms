@@ -6,7 +6,6 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ShareIcon from "@mui/icons-material/Share";
 import { useSelector } from 'react-redux';
-import { Key } from '@mui/icons-material';
 
 const imgURL = "https://images.unsplash.com/photo-1532274402911-5a369e4c4bb5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGxhbmRzY2FwZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60"
 
@@ -27,10 +26,9 @@ export const CardView = () => {
   const [ expanded, setExpanded] = useState(false)
   const {products} = useSelector((state) => state.productInfo)
 
-
   const handleOnExpandClick = () =>{
     setExpanded(!expanded)
-    console.log(products)
+    console.log("This is from the CardView: ",products)
   }
 
   return (
@@ -48,7 +46,11 @@ export const CardView = () => {
         <CardMedia 
           component='img'
           height='194'
-          image={products}
+          image={
+            products.map((item,i) => (
+              process.env.REACT_APP_ROOTSERVER + item.thumbnail?.slice(6)
+            ))
+          }
           alt='Image'
         />
 
@@ -56,7 +58,7 @@ export const CardView = () => {
           <Typography variant='body2' color='text.secondary'>
           This impressive paella is a perfect party dish and a fun meal to cook
           together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
+          if you like. {products.length} products found
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
