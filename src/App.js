@@ -7,12 +7,13 @@ import 'react-toastify/dist/ReactToastify.css';
 import { SignIn } from './pages/signIn-signUp/SignIn';
 import { Product } from './pages/product/Product';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { getProductAction } from './pages/product/productAction';
 
 function App() {
 
   const dispatch = useDispatch()
+
   useEffect(() => {
     dispatch(getProductAction())
   },[dispatch])
