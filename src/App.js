@@ -9,6 +9,7 @@ import { Product } from './pages/product/Product';
 import { useEffect } from 'react';
 import { useDispatch} from 'react-redux';
 import { getProductAction } from './pages/product/productAction';
+import { NewAccount } from './pages/signIn-signUp/NewAccount';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/signIn' element={ <SignIn />} />
+        <Route path='/newAccount' element={ <NewAccount/>} />
         <Route path='/product' element={ <Product />} />
       </Routes>
      <ToastContainer />
