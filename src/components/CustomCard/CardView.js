@@ -27,7 +27,7 @@ export const CardView = () => {
   const {products} = useSelector((state) => state.productInfo)
 
   const handleOnExpandClick = () =>{
-    setExpanded(!expanded)
+    // setExpanded(!expanded)
     console.log("This is from the CardView: ",products)
   }
 
@@ -100,7 +100,7 @@ export const CardView = () => {
           <Typography>
             Set aside off of the heat to let rest for 10 minutes, and then serve.
           </Typography>
-          </CardContent>
+        </CardContent>
         </Collapse>
       </Card>
     </div>
