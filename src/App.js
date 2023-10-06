@@ -10,6 +10,7 @@ import { useEffect } from 'react';
 import { useDispatch} from 'react-redux';
 import { getProductAction } from './pages/product/productAction';
 import { NewAccount } from './pages/signIn-signUp/NewAccount';
+import { Payment } from './components/Payment/Payment';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
         <Route path='/signIn' element={ <SignIn />} />
         <Route path='/newAccount' element={ <NewAccount/>} />
         <Route path='/product' element={ <Product />} />
+        <Route path='/payment' element={ <Payment />} />
       </Routes>
      <ToastContainer />
     </div>
