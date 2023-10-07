@@ -40,3 +40,12 @@ export const getProducts = () =>{
     return axiosProcessor(obj)
 }
 
+// ========= payment ============
+export const getPayment = () => {
+    const obj = {
+        method: 'post',
+        url: rootAPI + '/payment',
+        isPrivate: false
+    }
+    return axiosProcessor(obj)
+}
