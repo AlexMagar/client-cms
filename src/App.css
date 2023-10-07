@@ -50,3 +50,9 @@
 .carou{
   padding-top: 1rem;
 }
+
+/* =========== payment ========== */
+form{
+  width: 500px;
+  margin: auto;
+}
