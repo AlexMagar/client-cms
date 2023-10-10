@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { CardElement, PaymentElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import { CardCvcElement, CardElement, PaymentElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import axios from 'axios'
 
 export const CheckOutPage = () => {
@@ -71,8 +71,8 @@ export const CheckOutPage = () => {
     <form onSubmit={handleOnSubmit}>
       <p>name: <input onChange={handleOnChange} type='text' name='name' /></p>
       <p>email: <input onChange={handleOnChange} type='email' name='email'/></p>
-        <PaymentElement options={{hidePostalCode: true}}/>
-        <button>Submit</button>
+      <PaymentElement options={{hidePostalCode: true}}/>
+      <button>Submit</button>
     </form>
   )
 }
