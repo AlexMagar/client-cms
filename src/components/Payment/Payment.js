@@ -11,10 +11,10 @@ console.log('API key stripe:', stripePromise)
 
 export const Payment = () => {
 
-    // const options = {
-    //     //passing the client secret ovtained from the server
-    //     clientSecret: '{{CLIENT_SECRET}}'
-    // }
+    const options = {
+        //passing the client secret ovtained from the server
+        clientSecret: '{{CLIENT_SECRET}}'
+    }
 
   return (
     <div>
